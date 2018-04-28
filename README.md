@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lizmat/P5shift.svg?branch=master)](https://travis-ci.org/lizmat/P5shift)
+
 NAME
 ====
 
