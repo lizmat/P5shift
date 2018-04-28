@@ -1,12 +1,12 @@
 use v6.c;
 
-unit module P5shift:ver<0.0.1>:auth<cpan:ELIZABETH>;
+unit module P5shift:ver<0.0.2>:auth<cpan:ELIZABETH>;
 
 proto sub shift(|) is export {*}
 multi sub shift() {
-    callframe(2).my<!UNIT_MARKER>:exists  # heuristic for top level calling
-      ?? shift(@*ARGS)                      # top level, use @ARGV equivalent
-      !! shift(CALLERS::<@_>)               # unshift from the caller's @_
+    mainline()                  # heuristic for top level calling
+      ?? shift(@*ARGS)            # top level, use @ARGV equivalent
+      !! shift(CALLERS::<@_>)     # unshift from the caller's @_
 }
 multi sub shift(@array) {
     @array.elems ?? @array.shift !! Nil
@@ -14,7 +14,13 @@ multi sub shift(@array) {
 
 proto sub unshift(|) is export {*}
 multi sub unshift(@array,*@values --> Int:D) {
-    @array.unshift(@values).elems
+    @array.prepend(@values).elems
+}
+
+sub mainline(--> Bool:D) {  # heuristic for top level calling
+    my %my := callframe(3).my;
+    %my<!UNIT_MARKER>:exists
+      || !%my  # https://github.com/rakudo/rakudo/issues/1781
 }
 
 =begin pod
