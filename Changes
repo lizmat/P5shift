@@ -2,6 +2,9 @@ Revision history for P5shift
 
 {{$NEXT}}
 
+0.0.5  2019-11-10T19:53:19+01:00
+    - Changed Perl 5 to Perl
+
 0.0.4  2018-05-21T21:41:00+02:00
     - Added original Perl 5 documentation
 
