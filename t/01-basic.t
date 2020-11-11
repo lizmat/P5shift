@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use P5shift;
 
@@ -26,4 +26,4 @@ is shift, "FOO", 'does bare shift shift from @*ARGS at top level (1)';
 is shift, "BAR", 'does bare shift shift from @*ARGS at top level (2)';
 is shift, Nil, 'does bare shift shift from @*ARGS at top level (3)';
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

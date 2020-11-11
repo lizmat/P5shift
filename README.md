@@ -1,7 +1,7 @@
 NAME
 ====
 
-P5shift - Implement Perl's shift() / unshift() built-ins
+Raku port of Perl's shift() / unshift() built-ins
 
 SYNOPSIS
 ========
@@ -21,7 +21,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-This module tries to mimic the behaviour of the `shift` and `unshift` functions of Perl as closely as possible.
+This module tries to mimic the behaviour of Perl's `shift` and `unshift` built-ins as closely as possible in the Raku Programming Language.
 
 ORIGINAL PERL DOCUMENTATION
 ===========================
@@ -79,6 +79,21 @@ ORIGINAL PERL DOCUMENTATION
 
                 use 5.014;  # so push/pop/etc work on scalars (experimental)
 
+PORTING CAVEATS
+===============
+
+In future language versions of Raku, it will become impossible to access the `@_` variable of the caller's scope, because it will not have been marked as a dynamic variable. So please consider changing:
+
+    shift;
+
+to:
+
+    shift(@_);
+
+or, using the subroutine as a method syntax:
+
+    @_.&shift;
+
 AUTHOR
 ======
 
@@ -89,7 +104,7 @@ Source can be located at: https://github.com/lizmat/P5shift . Comments and Pull 
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

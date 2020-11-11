@@ -1,6 +1,6 @@
-use v6.c;
+use v6.d;
 
-unit module P5shift:ver<0.0.5>:auth<cpan:ELIZABETH>;
+unit module P5shift:ver<0.0.6>:auth<cpan:ELIZABETH>;
 
 proto sub shift(|) is export {*}
 multi sub shift() {
@@ -31,7 +31,7 @@ sub mainline(--> Bool:D) {  # heuristic for top level calling
 
 =head1 NAME
 
-P5shift - Implement Perl's shift() / unshift() built-ins
+Raku port of Perl's shift() / unshift() built-ins
 
 =head1 SYNOPSIS
 
@@ -49,8 +49,8 @@ P5shift - Implement Perl's shift() / unshift() built-ins
 
 =head1 DESCRIPTION
 
-This module tries to mimic the behaviour of the C<shift> and C<unshift>
-functions of Perl as closely as possible.
+This module tries to mimic the behaviour of Perl's C<shift> and C<unshift>
+built-ins as closely as possible in the Raku Programming Language.
 
 =head1 ORIGINAL PERL DOCUMENTATION
 
@@ -107,6 +107,22 @@ functions of Perl as closely as possible.
 
                 use 5.014;  # so push/pop/etc work on scalars (experimental)
 
+=head1 PORTING CAVEATS
+
+In future language versions of Raku, it will become impossible to access the
+C<@_> variable of the caller's scope, because it will not have been marked as
+a dynamic variable.  So please consider changing:
+
+    shift;
+
+to:
+
+    shift(@_);
+
+or, using the subroutine as a method syntax:
+
+    @_.&shift;
+
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
@@ -116,10 +132,12 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
 =end pod
+
+# vim: expandtab shiftwidth=4
