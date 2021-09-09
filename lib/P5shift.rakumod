@@ -1,6 +1,6 @@
 use v6.d;
 
-unit module P5shift:ver<0.0.6>:auth<cpan:ELIZABETH>;
+unit module P5shift:ver<0.0.7>:auth<zef:lizmat>;
 
 proto sub shift(|) is export {*}
 multi sub shift() {
@@ -125,14 +125,14 @@ or, using the subroutine as a method syntax:
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/P5shift . Comments and
 Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

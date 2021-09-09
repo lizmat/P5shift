@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/lizmat/P5shift/workflows/test/badge.svg)](https://github.com/lizmat/P5shift/actions)
+
 NAME
 ====
 
@@ -97,14 +99,14 @@ or, using the subroutine as a method syntax:
 AUTHOR
 ======
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/P5shift . Comments and Pull Requests are welcome.
 
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

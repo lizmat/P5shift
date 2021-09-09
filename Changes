@@ -2,6 +2,12 @@ Revision history for P5shift
 
 {{$NEXT}}
 
+0.0.7  2021-09-09T17:44:00+02:00
+    - Change file extension to .rakumod
+    - Migrate to zef ecosystem
+    - Update email address
+    - Update copyright year
+
 0.0.6  2020-11-11T22:36:11+01:00
     - Change name of distribution
     - Force to highest possible Raku version
