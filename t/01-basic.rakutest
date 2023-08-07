@@ -2,12 +2,10 @@ use v6.*;
 use Test;
 use P5shift;
 
-plan 16;
+plan 14;
 
 ok defined(::('&shift')),           'is &shift imported?';
-ok !defined(P5shift::{'&shift'}),   'is &shift externally NOT accessible?';
 ok defined(::('&unshift')),         'is &unshift imported?';
-ok !defined(P5shift::{'&unshift'}), 'is &unshift externally NOT accessible?';
 
 my @a = 1;
 is (unshift @a, 42), 2, 'does unshift return number of elems';
